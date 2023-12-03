@@ -1,6 +1,6 @@
 <?php
 
-namespace workWithUs\Data;
+namespace Data;
 
 final class FileSaver
 {
