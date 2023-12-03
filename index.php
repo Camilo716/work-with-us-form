@@ -1,8 +1,12 @@
 <?php
 use Controllers\WorkWithUsController;
+use Mail\PHPMailerManager;
+
 $response = "";
+
 require_once 'Controllers/WorkWithUsController.php';
-$controller = new WorkWithUsController();
+$phpmailer = new PHPMailerManager();
+$controller = new WorkWithUsController($phpmailer);
 
 if (isset($_POST["form"]) ) {
     $response = $controller->post();

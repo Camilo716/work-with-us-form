@@ -1,5 +1,7 @@
 <?php
 namespace Controllers;
+use DTOs\MailDto;
+use Mail\IMailManager;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -9,7 +11,11 @@ use Validators\FileValidator;
 use Data\FileSaver;
 
 final class WorkWithUsController {
-    public function __construct() { }
+    private IMailManager $_mailManager;
+
+    public function __construct(IMailManager $mailManager) { 
+        $this->_mailManager = $mailManager;
+    }
 
     public function post() {
         $cv_file = $_FILES['curriculum_vitae'];

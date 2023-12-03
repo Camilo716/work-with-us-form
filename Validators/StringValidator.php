@@ -3,7 +3,7 @@ namespace Validators;
 
 final class StringValidator
 {
-    public static function isValid($values)
+    public static function isValid(array $values)
     {
         foreach($values as $value)
         {
