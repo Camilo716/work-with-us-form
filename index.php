@@ -2,19 +2,22 @@
 use Controllers\WorkWithUsController;
 use Mail\PHPMailerManager;
 
+require_once 'Controllers/WorkWithUsController.php';
+require_once 'Mail/PHPMailerManager.php';
+
 $response = "";
 
-require_once 'Controllers/WorkWithUsController.php';
 $phpmailer = new PHPMailerManager();
 $controller = new WorkWithUsController($phpmailer);
 
-if (isset($_POST["form"]) ) {
+if (isset($_POST["form"])) {
     $response = $controller->post();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +25,7 @@ if (isset($_POST["form"]) ) {
     <script src="http://localhost:35729/livereload.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <?php if ($response === "💪😃"): ?>
         <div class="alert success">
@@ -32,7 +36,7 @@ if (isset($_POST["form"]) ) {
             <span>Whoops! Something happened</span>
         </div>
     <?php endif; ?>
-    <form action="index.php" method="post" enctype="multipart/form-data">    
+    <form action="index.php" method="post" enctype="multipart/form-data">
         <h1>Work With Us!</h1>
         <div class="input-group">
             <label for="name">Name:</label>
@@ -57,7 +61,7 @@ if (isset($_POST["form"]) ) {
         <div class="button-container">
             <button name="form" type="submit">Submit</button>
         </div>
-        <div class="contact-info">  
+        <div class="contact-info">
             <div class="info">
                 <span><i class="fas fa-map-marker-alt"></i> 13 Saw Mill Circle, North Olmested.</span>
             </div>
@@ -68,4 +72,5 @@ if (isset($_POST["form"]) ) {
     </form>
     <script src="https://kit.fontawesome.com/bbff992efd.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

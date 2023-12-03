@@ -4,7 +4,7 @@ namespace Data;
 
 final class FileSaver
 {
-    public static function save($file)
+    public static function save($file): string
     {
         $base_path = "./Assets/CurriculumsVitae/";
         $file_name = $file['name'];
@@ -16,5 +16,6 @@ final class FileSaver
         }
 
         move_uploaded_file($file["tmp_name"], $path);
+        return $path;
     }
 }

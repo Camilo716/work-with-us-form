@@ -5,6 +5,8 @@ use DTOs\MailDto;
 use PHPMailer\PHPMailer\PHPMailer;
 
 require("vendor/autoload.php");
+require_once 'IMailManager.php';
+
 final class PHPMailerManager implements IMailManager
 {
     private PHPMailer $phpmailer;

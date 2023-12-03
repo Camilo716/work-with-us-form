@@ -3,9 +3,9 @@ namespace DTOs;
 
 final class MailDto
 {
-    private $from;
-    private $fromName;
-    private $subject;
-    private $body;
-    private $cvFileRoute;
+    public $from;
+    public $fromName;
+    public $subject;
+    public $body;
+    public $cvFileRoute;
 }
