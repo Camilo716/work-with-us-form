@@ -8,26 +8,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
+    <div class="alert danger">
+        <span>Whoops! something happened</span>
+    </div>
+    <div class="alert success">
+        <span>Message sent Succesfuly!</span>
+    </div>
+    <form action="Controllers/WorkWithUsController.php" method="post">    
         <h1>Work With Us!</h1>
-        <form action="./Controllers/WorkWithUsController.php" method="post" enctype="multipart/form-data">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name">
-                
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email">
-                
-                <label for="subject">Subject</label>
-                <input type="text" name="subject" id="subject">
-            
-            <label for="message">Message</label>
-            <input type="text" name="message" id="message">
-    
-            <label for="cv">Curriculum Vitae</label>
+        <div class="input-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="input-group">
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" id="subject">
+        </div>
+        <div class="input-group">
+            <label for="message">Message:</label>
+            <textarea name="message" id="message"></textarea>
+        </div>
+        <div class="input-group">
+            <label for="cv">Curriculum Vitae:</label>
             <input type="file" name="curriculum_vitae" id="cv">
-    
+        </div>
+        <div class="button-container">
             <button type="submit">Submit</button>
-        </form>
-    </section>
+        </div>
+        <div class="contact-info">  
+            <div class="info">
+                <span><i class="fas fa-map-marker-alt"></i> 13 Saw Mill Circle, North Olmested.</span>
+            </div>
+            <div class="info">
+                <span><i class="fas fa-phone"></i> +1 123 456 7890</span>
+            </div>
+        </div>
+    </form>
+    <script src="https://kit.fontawesome.com/bbff992efd.js" crossorigin="anonymous"></script>
 </body>
 </html>
