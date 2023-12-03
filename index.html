@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work With Us</title>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Work With Us!</h1>
-    <form action="./Controllers/WorkWithUsController.php" method="post" enctype="multipart/form-data">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
-
-        <label for="cv">Curriculum Vitae</label>
-        <input type="file" name="curriculum_vitae" id="cv">
-
-        <button type="submit">Submit</button>
-    </form>
-    <h2></h2>
-
+    <section>
+        <h1>Work With Us!</h1>
+        <form action="./Controllers/WorkWithUsController.php" method="post" enctype="multipart/form-data">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+                
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+                
+                <label for="subject">Subject</label>
+                <input type="text" name="subject" id="subject">
+            
+            <label for="message">Message</label>
+            <input type="text" name="message" id="message">
+    
+            <label for="cv">Curriculum Vitae</label>
+            <input type="file" name="curriculum_vitae" id="cv">
+    
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 </body>
 </html>
