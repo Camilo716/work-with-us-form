@@ -1,3 +1,14 @@
+<?php
+use Controllers\WorkWithUsController;
+$response = "";
+require_once 'Controllers/WorkWithUsController.php';
+$controller = new WorkWithUsController();
+
+if (isset($_POST["form"]) ) {
+    $response = $controller->post();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +19,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="alert danger">
-        <span>Whoops! something happened</span>
-    </div>
-    <div class="alert success">
-        <span>Message sent Succesfuly!</span>
-    </div>
-    <form action="Controllers/WorkWithUsController.php" method="post" enctype="multipart/form-data">    
+    <?php if ($response === "💪😃"): ?>
+        <div class="alert success">
+            <span>Message sent successfully!</span>
+        </div>
+    <?php elseif ($response === "👎😑"): ?>
+        <div class="alert danger">
+            <span>Whoops! Something happened</span>
+        </div>
+    <?php endif; ?>
+    <form action="index.php" method="post" enctype="multipart/form-data">    
         <h1>Work With Us!</h1>
         <div class="input-group">
             <label for="name">Name:</label>
@@ -37,7 +51,7 @@
             <input type="file" name="curriculum_vitae" id="cv">
         </div>
         <div class="button-container">
-            <button type="submit">Submit</button>
+            <button name="form" type="submit">Submit</button>
         </div>
         <div class="contact-info">  
             <div class="info">

@@ -24,7 +24,3 @@ final class WorkWithUsController {
         return "💪😃";
     }
 }
-
-$controller = new WorkWithUsController();
-$response = $controller->post();
-echo $response;
