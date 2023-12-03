@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Form</title>
+    <title>Work With Us</title>
 </head>
 <body>
-    <h1>Hello PHP!</h1>
-    <form action="./Controller.php" method="post" enctype="multipart/form-data">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username">
+    <h1>Work With Us!</h1>
+    <form action="./Controllers/WorkWithUsController.php" method="post" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
 
-        <label for="img">file</label>
-        <input type="file" name="profile_img" id="img">
+        <label for="cv">Curriculum Vitae</label>
+        <input type="file" name="curriculum_vitae" id="cv">
 
         <button type="submit">Submit</button>
     </form>
